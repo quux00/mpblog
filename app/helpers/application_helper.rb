@@ -16,4 +16,9 @@ module ApplicationHelper
       "#{base_title} | #@title"
     end
   end
+
+  def logo
+    image_tag("MoluchusHorridus.small.png", :alt=>"Thorny Devil", :class=>"round")
+  end
 end
+
