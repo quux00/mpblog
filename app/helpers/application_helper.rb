@@ -2,9 +2,10 @@
 # that allows the controllers to include the module
 # and make the helper methods availble as if they
 # were instance methods.
-# This helper module is included for all controllers
-# so any methods defined here will be automatically 
-# available in all view
+# Because we called this one "application_helper" it
+# is included for all controllers.
+# So any methods defined here will be automatically 
+# available in all views
 module ApplicationHelper
   # return title on per page basis
   def title
