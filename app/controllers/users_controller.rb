@@ -14,6 +14,8 @@ class UsersController < ApplicationController
                                  # the render version does not pass the unit test
     else
       @title = "Sign up"
+      @user.password = ''
+      @user.password_confirmation = ''
       render new_user_path
       # render 'new'    #~TODO: is this synonymous to the line above?
     end
