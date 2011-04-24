@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if (@user.save)
+    if @user.save
+      sign_in(@user)
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
       # render user_path(@user)  #~TODO: is this synonymous to the line above?
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    sign_in(@user)  #~TODO: not sure this is right (not in book?)
     @title = @user.name
   end
 

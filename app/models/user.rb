@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     u.has_password?(passwd) ? u : nil
   end
 
+  def self.authenticate_with_salt(id, cookie_salt)
+    u = find_by_id(id)
+    (u && u.salt == cookie_salt) ? u : nil
+  end
 
   ### instance methods ###
 
